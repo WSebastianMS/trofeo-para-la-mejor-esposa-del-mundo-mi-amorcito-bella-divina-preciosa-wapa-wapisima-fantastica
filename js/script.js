@@ -46,7 +46,7 @@ heartShape.moveTo(0, 1);
 heartShape.bezierCurveTo(1.5, 1.5, 1.5, 0, 0, -1);
 heartShape.bezierCurveTo(-1.5, 0, -1.5, 1.5, 0, 1);
 
-const extrudeSettings = { depth: 0, bevelEnabled: true, bevelThickness: 1.3, bevelSize: 1.8 };
+const extrudeSettings = { depth: 0, bevelEnabled: true, bevelThickness: 1, bevelSize: 1.3 };
 const heartGeometry = new THREE.ExtrudeGeometry(heartShape, extrudeSettings);
 const heart = new THREE.Mesh(heartGeometry, goldMaterial);
 heart.rotation.x = 0; // Mantener orientación vertical
@@ -72,7 +72,7 @@ points.push(new THREE.Vector3(0, 2.5, 0));
 curve.add(new THREE.CatmullRomCurve3(points));
 
 // Crear los alambres con TubeGeometry
-const tubeGeometry = new THREE.TubeGeometry(curve, 100, 0.2, 8, true);
+const tubeGeometry = new THREE.TubeGeometry(curve, 25, 0.1, 10, true);
 const wire = new THREE.Mesh(tubeGeometry, goldMaterial);
 wire.position.set(0, 7, 0); // Ajustar posición para rodear el corazón
 heartWireGroup.add(wire);
